@@ -1,0 +1,12 @@
+# Conclusiones del ejercicio 2: PetStore APIS Karate -- SigchaK
+
+## Hallazgo
+	- Inicialmente se presentaba un error porque la configuración de Karate tenía "config.baseUrl = 'https://petstore.swagger.io'" sin el sufijo "/v2". Los endpoints de la API pública usados en los features (por ejemplo "/pet", "/pet/{id}", "/pet/findByStatus") están bajo la ruta /v2. Por eso las peticiones originales devolvían 404 Not Found y en un caso 405 Not Allowed.
+	- Se tomó la acción de actualizar en el archivo: src/test/resources/karate-config.js, la baseUrl a: "https://petstore.swagger.io/v2" y se ejecutaron nuevamente los tests.
+
+# Conclusiones
+- Las pruebas de APIs en Karate son fáciles de implementar, siempre y cuando las configuraciones previas, como las rutas de archivos, dependencias y configuraciones de entorno, estén correctamente definidas. Esto asegura que el entorno de pruebas esté listo para ejecutarse sin contratiempos, facilitando la ejecución fluida y eficiente de los casos de prueba.
+- La automatización de pruebas de API es crucial para detectar posibles fallos a nivel de backend de manera temprana. Esto no solo ayuda a identificar errores de manera más rápida y precisa, sino que también acelera el proceso de corrección, mejorando significativamente la calidad general del sistema al reducir el riesgo de problemas en producción.
+- Karate ofrece una validación altamente flexible de las respuestas API. Por ejemplo, al realizar una consulta de mascotas por estatus, pudimos verificar no solo la estructura de la respuesta (como la clave status), sino también la integridad de los datos (valor "sold"). Esto asegura que tanto la estructura como el contenido de las respuestas cumplen con los requisitos esperados, lo que valida el correcto funcionamiento de la API.
+- Los mensajes de error generados por Karate en la terminal son claros y detallados, lo que facilita la identificación y comprensión de los problemas detectados durante las ejecuciones. Esto permite realizar correcciones rápidas y precisas en el código, minimizando el tiempo de depuración y asegurando que las pruebas se mantengan efectivas y confiables.
+- Karate genera reportes detallados que ofrecen una visión clara y estructurada de cada ejecución de prueba. Estos informes permiten no solo validar el éxito o fallo de las pruebas, sino también obtener un análisis detallado de cada paso ejecutado, lo que facilita la revisión y auditoría de los resultados obtenidos.
