@@ -1,8 +1,6 @@
 # Readme del ejercicio 2: APIS Karate -- SigchaK
 Este proyecto realiza las pruebas de APIS que apunta a https://petstore.swagger.io/v2, la automatización corresponde a añadir máscotas a la tienda, buscar la mascota por ID, actualizar el nombre/estado de la mascota y buscar por el estado "sold".
 
-	- El archivo de configuración de Karate está en: src/test/resources/karate-config.js
-
 ## Versiones de tecnologías usadas
 	- Gradle (wrapper): 9.0.0
 	- Java version: 17.0.12
@@ -10,12 +8,12 @@ Este proyecto realiza las pruebas de APIS que apunta a https://petstore.swagger.
 
 ## Requisitos Previos
 - Obtener el proyecto "SigchaEjercicioKarate" e importarlo desde la herramienta IntelliJ
+- Revisar que exista el archivo de configuración de Karate en: src/test/resources/karate-config.js
+- Revisar que exista el archivo petstore.feature en: src/test/resources/petstore/petstore.feature
+- Revisar que exista el archivo de ingreso de datos en: src/test/resources/petstore/Data/crear_mascota.json
+- Revisar que exista el archivo de actualización de datos en: src/test/resources/petstore/Data/actualizar_mascota.json
 
-## Instrucciones de ejecución
-	- Si necesitas apuntar a otro entorno, edita: src/test/resources/karate-config.js. Modifica: config.baseUrl.
-	- Evita reusar ids que puedan chocar con otras ejecuciones.
-	- Si deseas parametrizar la URL base desde variables de entorno, modifica: karate-config.js, para leer: process.env o propiedades del sistema.
-	- Para entornos CI, se recomienda usar el wrapper (`./gradlew`) y fijar la JDK 17.
+- Revisar que exista el archivo PetStoreRunner en: src/test/java/petstore/PetStoreRunner.java
 
 ## Configuración relevante
 	- Reporte de Karate: build/karate-reports/petstore.petstore.html
